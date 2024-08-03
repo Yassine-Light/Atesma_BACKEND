@@ -1,6 +1,33 @@
+<?php
+require_once realpath(__DIR__ ."/vendor/autoload.php");
+use Dotenv\Dotenv;
+$dotenv=Dotenv::createImmutable(__DIR__ );
+$dotenv->load();
+$dotenv->required(['DB_USER_NAME', 'DB_HOSTNAME', 'DB_NAME', 'DB_PASSWORD'])->notEmpty();
+$db_user_name = $_ENV['DB_USER_NAME'];
+$db_password = $_ENV['DB_PASSWORD'];
+$db_name = $_ENV['DB_NAME'];
+$db_hostname = $_ENV['DB_HOSTNAME'];
+$conn = mysqli_connect($db_hostname,$db_user_name,$db_password,$db_name);
+if (!$conn){
+    echo 'error 404 no db';
+}
 
+$sql='SELECT CID , Name, Category,Picture FROM certificates ORDER BY Category';
+$result=mysqli_query($conn,$sql);
+$certificates=mysqli_fetch_all($result,MYSQLI_ASSOC);
+mysqli_free_result($result);
+mysqli_close($conn);
+
+
+
+?>
+<head>
+    <title>Certificates</title>
+</head>
 <body>
     <main> 
+    
         <h1 class="h1">Our certificates</h1>
         <p class="p">Explore a wide range of certificates we provide for our costumers! </p>
         <section class="filtering">
@@ -11,12 +38,15 @@
                         <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
                     </svg>
                     <div class="dropdown-menu" id="dropdown-category">
-                        <div class="category">Microsoft</div>
-                        <div class="category">AutoDesk</div>
-                        <div class="category">Apple</div>
-                        <div class="category">Apple</div>
-                        <div class="category">Apple</div>
-                        <div class="category">Apple</div>
+                    <?php $displayed_categories =array();
+                    foreach($certificates as $certificate){
+                        if(!in_array($certificate['Category'], $displayed_categories)){
+                            $displayed_categories[] = $certificate['Category'];}
+                        }
+                        
+                    foreach($displayed_categories as $displayed_categorie):?>
+                        <div class="category"><?php echo htmlspecialchars($displayed_categorie);?></div>
+                    <?php endforeach  ?>    
                     </div>
                 </div>
                 <div class="filter">
@@ -31,7 +61,9 @@
                 </div>
             </div>
             <div class="search-bar">
-                <input type="search" placeholder="Search" aria-label="Search">
+                <form method="POST" >
+                    <input type="text" placeholder="Search" name="search_C" aria-label="Search">
+                </form>
                 <div class="search-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -39,99 +71,14 @@
                 </div>
             </div>
         </section>
-
+        <?php foreach($certificates as $certificate): ?>
         <div class="certificates-categories">
             <div class="certificate-category">
-                <img src="./photos/ESB.png" alt="" class="category-image">
-                <div class="category-title">Adobe</div>
-                <p>10 items</p>
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($certificate['Picture']); ?>" alt="" class="category-image">
+                <div class="category-title"><?php echo htmlspecialchars($certificate['Category']);?></div>
+                <p><?php echo ($certificate['Name']);?></p>
                 <button class="view-now">view now</button>
-            </div>
-            <div class="certificate-category">
-                <img src="./photos/AppDev.png" alt="" class="category-image">
-                <div class="category-title">Apple</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-            <div class="certificate-category">
-                <img src="./photos/Autodesk.png" alt="" class="category-image">
-                <div class="category-title">Autodesk</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> <div class="certificate-category">
-                <img src="./photos/EC Council.png" alt="" class="category-image">
-                <div class="category-title">Cisco</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-             <div class="certificate-category">
-                <img src="./photos/EC Council.png" alt="" class="category-image">
-                <div class="category-title">Communication Skills for business</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-            <div class="certificate-category">
-                <img src="./photos/ESB.png" alt="" class="category-image">
-                <div class="category-title">Entrepreneurship and Small Business</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-            <div class="certificate-category">
-                <img src="./photos/IC3 Logo.png" alt="" class="category-image">
-                <div class="category-title">IC3 Digital literacy</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-            <div class="certificate-category">
-                <img src="./photos/ITS.png" alt="" class="category-image">
-                <div class="category-title">Information Technology Speacialist</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-            <div class="certificate-category">
-                <img src="./photos/PMI.png" alt="" class="category-image">
-                <div class="category-title">Intuit</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-            <div class="certificate-category">
-                <img src="./photos/ESB.png" alt="" class="category-image">
-                <div class="category-title">Meta</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-            <div class="certificate-category">
-                <img src="./photos/Microsoft.png" alt="" class="category-image">
-                <div class="category-title">Microsoft</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-            <div class="certificate-category">
-                <img src="./photos/ESB.png" alt="" class="category-image">
-                <div class="category-title">Pearson Languages</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-            <div class="certificate-category">
-                <img src="./photos/PMI.png" alt="" class="category-image">
-                <div class="category-title">Project Managements Institute(PMI)</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-            <div class="certificate-category">
-                <img src="./photos/Unity.png" alt="" class="category-image">
-                <div class="category-title">Unity</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-            <div class="certificate-category">
-                <img src="./photos/EC Council.png" alt="" class="category-image">
-                <div class="category-title">Credentials</div>
-                <p>10 items</p>
-                <button class="view-now">view now</button>
-            </div> 
-            
-            
+            </div>         
         </div>
+        <?php endforeach ?>
 </main>
-

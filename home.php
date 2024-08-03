@@ -1,3 +1,15 @@
+<?php
+if(isset($_POST["btn-xc"])){
+    $page= 'certificates';
+    header("Location:index.php?page=$page");
+    exit();
+}
+if(isset($_POST["btn-vs"])){
+    $page= 'store';
+    header("Location:index.php?page=$page");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,38 +17,14 @@
 </head>
 <script src="file.js"></script>
 <body>
-  <!--  <header>
-        <img src="./photos/Logo-ATESMA.png" alt="" class="logo">
-        <div class="nav-opener" id="nav-opener" onclick=showNav()>
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <div class="nav-bar" id="nav-bar">
-            <a href="home.html" class="nav-item"><i class="fa-solid fa-house"></i>Home</a>
-            <div href="certificates.html" class="nav-item certificates-dropdown" onclick=showCertificatesDropdown()><i class="fa-solid fa-medal"></i>Certificates<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-caret-down" viewBox="0 0 16 16">
-                <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
-              </svg>  <div class="certificates-dropdown-menu " id="certificates-dropdown-menu">
-                <div class="c-c">Microsoft</div>
-                <div class="c-c">AutoDesk</div>
-                <div class="c-c">Apple</div>
-                <div class="c-c">Apple</div>
-                <div class="c-c">Apple</div>
-                <div class="c-c">Apple</div>
-            </div>  </div>
-            <a href="store.html" class="nav-item"><i class="fa-solid fa-store"></i>Store</a>
-            <a href="" class="nav-item"><i class="fa-solid fa-phone"></i>Live Support</a>
-            <a href="" class="nav-item"><i class="fa-solid fa-right-to-bracket"></i>Login/Register</a>
-        </div>
-
-    </header>-->
-
     <main>
         <section class="introduction">
             <div class="introduction-text">
                 <h1 class="introduction-title">What is Atesma?</h1>
                 <p class="introduction-paragraph">Atesma is a leading provider of professional certification exams and educational resources. Our mission is to empower individuals and organizations through validated skills and knowledge, ensuring they stay ahead in </p>
-                <button class="learn-more">Explore certificates <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                <form method="POST">
+                <input class="learn-more" type="submit" name="btn-xc" value="Explore certificates" >
+                </form>
             </div>
             <img src="./photos/desk-3139127_1280.jpg" alt="" class="introduction-image">
 
@@ -48,7 +36,9 @@
                 <h1 class="added-value-title">What we offer</h1>
                 <p class="added-value-paragraph">Atesma certifications boost career opportunities and earning potential for professionals, offering comprehensive support and preparation. For organizations, they ensure a skilled, productive workforce and enhanced business performance. Globally recognized.
                 </p>
-                <button class="learn-more">visit store<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                <form method="POST">
+                <input class="learn-more" type="submit" name="btn-vs" value="Visit store" >
+                </form>
             </div>
             
             
