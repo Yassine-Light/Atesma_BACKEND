@@ -1,3 +1,6 @@
+<?php
+include_once("conn.php");
+?>
 
 <head>
     <title>store - individuals</title>
@@ -45,30 +48,17 @@
         </section>
         
         <section class="products">
+            <?php foreach($certificates as $certificate): ?>
             <div class="product">
-                <img src="./photos/ESB.png" alt="" class="product-image">
-                <div class="product-title">Product title</div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, optio inventore deserunt ipsum doloremque sapiente culpa vitae in praesentium fugiat.
-                </p>
-                <p class="price">100DH</p>
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($certificate['Picture']); ?>" alt="" class="category-image">
+                <div class="product-title"><?php echo htmlspecialchars($certificate['Name']);?></div>
+                <p class="product-description"><?php echo htmlspecialchars($certificate['Category']) ?></p>
+                <p class="price"><?php echo htmlspecialchars($certificate['Price']." DH") ?></p>
+                <form method="POST">
                 <button class="buy-now">Buy Now</button>
+                </form>
             </div>
-            <div class="product">
-                <img src="./photos/ESB.png" alt="" class="product-image">
-                <div class="product-title">Product title</div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, optio inventore deserunt ipsum doloremque sapiente culpa vitae in praesentium fugiat.
-                </p>
-                <p class="price">100DH</p>
-                <button class="buy-now">Buy Now</button>
-            </div>
-            <div class="product">
-                <img src="./photos/ESB.png" alt="" class="product-image">
-                <div class="product-title">Product title</div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, optio inventore deserunt ipsum doloremque sapiente culpa vitae in praesentium fugiat.
-                </p>
-                <p class="price">100DH</p>
-                <button class="buy-now">Buy Now</button>
-            </div>
+            <?php endforeach ?>
         </section>
     </main>
     

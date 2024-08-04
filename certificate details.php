@@ -65,5 +65,5 @@ if (isset($_POST['BUT'])) {
         });
     });
 </script>
-<?php include_once("/templates/footer.php") ?>
+<?php include_once("templates/footer.php") ?>
 
