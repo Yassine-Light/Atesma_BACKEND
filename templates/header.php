@@ -17,9 +17,9 @@
     <script src="https://kit.fontawesome.com/b3c69fab50.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="file.js"></script>
-</head>
+</head> 
 <header>
-<img src="./photos/Logo-ATESMA.png" alt="" class="logo">
+        <img src="./photos/Logo-ATESMA.png" alt="" class="logo">
         <div class="nav-opener" id="nav-opener" onclick=showNav()>
             <div class="line"></div>
             <div class="line"></div>
@@ -30,6 +30,8 @@
             <a href="index.php?page=certificates" class="nav-item"><i class="fa-solid fa-medal"></i>Certificates</a>
             <a href="index.php?page=store" class="nav-item"><i class="fa-solid fa-store"></i>Store</a>
             <a href="" class="nav-item"><i class="fa-solid fa-phone"></i>Live Support</a>
-            <a href="" class="nav-item"><i class="fa-solid fa-right-to-bracket"></i>Login/Register</a>
+            
         </div>
-</header>
+        <a href="" class="nav-item login"><i class="fa-solid fa-right-to-bracket"></i>Login/Register</a>
+
+    </header>

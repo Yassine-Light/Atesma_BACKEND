@@ -22,7 +22,7 @@ if (isset($_POST['BUT'])) {
 </head>
 <script src="file.js"></script>
 <body>
-    <main>
+    <main class="certificate-main">
         <div class="text">
             <h1><?php echo htmlspecialchars($selectedCertificate['Name']); ?></h1>
             <p>Provider: <?php echo htmlspecialchars($selectedCertificate['Category']); ?></p>

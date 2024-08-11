@@ -17,7 +17,7 @@ if(isset($_POST["btn-vs"])){
 </head>
 <script src="file.js"></script>
 <body>
-    <main>
+    <main class="home-main">
         <section class="introduction">
             <div class="introduction-text">
                 <h1 class="introduction-title">What is Atesma?</h1>

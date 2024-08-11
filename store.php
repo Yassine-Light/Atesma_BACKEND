@@ -7,7 +7,7 @@ include_once("conn.php");
 </head>
     <script src="file.js"></script>
 <body id="body">
-    <main>
+    <main class="store-main">
         <h1 class="h1">Explore Our Store</h1>
         <p class="p">Discover a wide variety of products tailored to meet your needs. From software to accessories, find what suits you best!</p>
         <section class="filtering">
