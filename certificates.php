@@ -8,7 +8,7 @@ include_once("conn.php");
     <title>Certificates</title>
 </head>
 <body>
-    <main> 
+    <main class="certificates-main"> 
     
         <h1 class="h1">Our certificates</h1>
         <p class="p">Explore a wide range of certificates we provide for our costumers! </p>
