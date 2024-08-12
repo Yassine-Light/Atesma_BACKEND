@@ -10,9 +10,9 @@ include_once("conn.php");
     <main class="store-main">
         <h1 class="h1">Explore Our Store</h1>
         <p class="p">Discover a wide variety of products tailored to meet your needs. From software to accessories, find what suits you best!</p>
-        <section class="filtering">
-            <div class="filters">
-                <div class="filter">
+        <section class="filtering-s">
+            <div class="filters-s">
+                <div class="filter-s">
                     Category
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-caret-down" viewBox="0 0 16 16">
                         <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
@@ -26,7 +26,7 @@ include_once("conn.php");
                         <div class="category">Apple</div>
                     </div>
                 </div>
-                <div class="filter">
+                <div class="filter-s">
                     Filter by
                     <svg   xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-caret-down" viewBox="0 0 16 16">
                         <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>

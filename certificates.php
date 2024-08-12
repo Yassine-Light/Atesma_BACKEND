@@ -12,9 +12,9 @@ include_once("conn.php");
     
         <h1 class="h1">Our certificates</h1>
         <p class="p">Explore a wide range of certificates we provide for our costumers! </p>
-        <section class="filtering">
-            <div class="filters">
-                <div class="filter">
+        <section class="filtering-c">
+            <div class="filters-c">
+                <div class="filter-c">
                     Category
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-caret-down" viewBox="0 0 16 16">
                         <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
@@ -31,7 +31,7 @@ include_once("conn.php");
                     <?php endforeach  ?>    
                     </div>
                 </div>
-                <div class="filter">
+                <div class="filter-c">
                     Filter by
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-caret-down" viewBox="0 0 16 16">
                         <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
