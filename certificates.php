@@ -1,7 +1,11 @@
 <?php
 session_start();
 include_once("conn.php");
-
+$sql='SELECT * FROM certificates ORDER BY Category';
+$result=mysqli_query($conn,$sql);
+$certificates=mysqli_fetch_all($result,MYSQLI_ASSOC);
+mysqli_free_result($result);
+mysqli_close($conn);
 
 ?>
 <head>
@@ -43,9 +47,7 @@ include_once("conn.php");
                 </div>
             </div>
             <div class="search-bar">
-                <form method="POST" >
-                    <input type="text" placeholder="Search" name="search_C" aria-label="Search">
-                </form>
+                <input type="text" id="search" placeholder="Search" aria-label="Search">
                 <div class="search-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -53,17 +55,44 @@ include_once("conn.php");
                 </div>
             </div>
         </section>
-        <?php foreach ($certificates as $index => $certificate): ?>
-        <div class="certificates-categories">
-            <div class="certificate-category">
-                <img src="data:image/jpeg;base64,<?php echo base64_encode($certificate['Picture']); ?>" alt="" class="category-image">
-                <div class="category-title"><?php echo htmlspecialchars($certificate['Category']);?></div>
-                <p><?php echo ($certificate['Name']);?></p>
-                <form method="POST" action="certificate details.php">
-                    <input type="hidden" name="index" value="<?php echo $index; ?>">
-                    <button type="submit" class="view-now">View Now</button>
-                </form>
-            </div>         
+        <div id="searchresult">     
         </div>
-        <?php endforeach ?>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script type="text/javascript">
+$(document).ready(function(){
+
+    function loadAllProducts() {
+        $.ajax({
+            url: "search.php",
+            method: "POST",
+            data: { input: '' }, 
+            success: function(data){
+                $("#searchresult").html(data);
+                $("#searchresult").css("display", "block");
+            }
+        });
+    }
+
+    loadAllProducts();
+
+    $("#search").keyup(function(){
+        var input = $(this).val();
+        if(input != ""){
+            $.ajax({
+                url: "search.php",
+                method: "POST",
+                data: { input: input },
+                success: function(data){
+                    $("#searchresult").html(data);
+                    $("#searchresult").css("display", "block");
+                } 
+            });
+        } else {
+            loadAllProducts();
+        }
+    });
+});
+
+
+</script>
 </main>

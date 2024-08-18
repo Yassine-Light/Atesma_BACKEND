@@ -15,7 +15,6 @@
     <script src="https://kit.fontawesome.com/b3c69fab50.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://kit.fontawesome.com/b3c69fab50.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="file.js"></script>
 </head> 
 <header>

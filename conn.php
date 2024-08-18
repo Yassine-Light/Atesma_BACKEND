@@ -12,8 +12,4 @@ $conn = mysqli_connect($db_hostname,$db_user_name,$db_password,$db_name);
 if (!$conn){
     echo 'error 404 no db';
 }
-$sql='SELECT * FROM certificates ORDER BY Category';
-$result=mysqli_query($conn,$sql);
-$certificates=mysqli_fetch_all($result,MYSQLI_ASSOC);
-mysqli_free_result($result);
-mysqli_close($conn);
+?>

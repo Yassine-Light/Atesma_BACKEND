@@ -1,6 +1,11 @@
 <?php
 include_once("conn.php");
 include_once("templates/header.php");
+$sql='SELECT * FROM certificates ORDER BY Category';
+$result=mysqli_query($conn,$sql);
+$certificates=mysqli_fetch_all($result,MYSQLI_ASSOC);
+mysqli_free_result($result);
+mysqli_close($conn);
 $selectedCertificate = null;
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['index'])) {
     $index = intval($_POST['index']);
