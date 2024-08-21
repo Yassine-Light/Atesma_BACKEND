@@ -9,6 +9,7 @@ if(isset($_POST["btn-vs"])){
     header("Location:index.php?page=$page");
     exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +25,9 @@ if(isset($_POST["btn-vs"])){
                 <h1 class="introduction-title">Welcome to Atesma</h1>
                 <p class="introduction-paragraph">We are the leading certificates provider in <b>all</b> Morocco,we provide 
                 IT certificates given by the highest ranking companies, as yes They are our partners! </p>
-                <button class="learn-more">Explore certificates <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                <form method="post">
+                <button class="learn-more" name="btn-xc">Explore certificates <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                </form>
             </div>
             <div class="arrow arrow-right" id="arrow-right" onclick=switchHeroRight()> > </div>
            
@@ -34,7 +37,9 @@ if(isset($_POST["btn-vs"])){
                     <h1 class="added-value-title">What we offer</h1>
                     <p class="added-value-paragraph">Atesma certifications boost career opportunities and earning potential for professionals, offering comprehensive support and preparation. For organizations, they ensure a skilled, productive workforce and enhanced business performance. Globally recognized.
                     </p>
-                    <button class="learn-more">visit store<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    <form method="POST" >
+                    <button class="learn-more" name="btn-vs">visit store<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    </form>
                 </div>
                 
 
