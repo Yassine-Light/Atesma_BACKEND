@@ -150,5 +150,85 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 </script>
+
+<section class="purchase-section" id="purchase-section">
+        <div class="purchase-overlay" onclick=hidePurchase()></div>
+    <form class="purchase-form" id="purchase-form">
+        <h1>Purchase Request</h1>
+        <h3>Please fill in the information below, and we will contact you as soon as possible</h3>
+      
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full-name" required>
+      
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+      
+        <label for="certiport-username">Certiport Username</label>
+        <input type="text" id="certiport-username" name="certiport-username" required>
+      
+        <button type="submit" onclick=purchaseDone()>Submit</button>
+        
+        <p class="help-text">Need help? <a href="#">Contact us</a></p>
+      </form>
+
+
+      
+    </section>
+    
+      
+      
+    <div id="success-popup" class="popup">
+        <div class="popup-content" id="popup-content">
+          <span class="close-btn" id="close-popup">&times;</span>
+          <p>Information has been sent successfully! We will contact you as soon as possible to complete the purchase process. Thank you!</p>
+        </div>
+    </div>
+
+    <script>
+        
+    function openPurchase(){
+        document.getElementById("purchase-section").style.display = "flex"
+    }
+    function hidePurchase(){
+        document.getElementById("purchase-section").style.display = "none"
+    }
+    function purchaseDone(){
+        localStorage.setItem("purchase", "done")
+        document.getElementById("purchase-form").style.display = "none"
+        console.log("working 2")
+
+    }
+    
+    if (localStorage.getItem("purchase") == "done"){
+        document.getElementById("success-popup").style.display = "flex"
+    }
+
+
+
+
+
+
+
+
+    function showPopup() {
+  document.getElementById('success-popup').style.display = 'block';
+}
+
+// Function to hide the popup
+document.getElementById('close-popup').onclick = function() {
+  document.getElementById('success-popup').style.display = 'none';
+  localStorage.removeItem("purchase")
+  console.log(localStorage.getItem("purchase"))
+
+}
+
+// Optional: Automatically close the popup after a few seconds
+
+
+
+    </script>
     </main>
     

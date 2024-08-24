@@ -35,7 +35,7 @@ if (mysqli_num_rows($result) > 0) { ?>
             <p class="price"><?php echo htmlspecialchars($certificate['Price']." DH") ?></p>
             <form action="<?php echo htmlspecialchars($action) ?>" method="post">
                 <input type="hidden" name="index" value="<?php echo htmlspecialchars($index); ?>">
-                <button type="submit" class="buy-now" name="<?php echo htmlspecialchars($Bname); ?>"><?php echo htmlspecialchars($sentence); ?></button>
+                <button type="submit" class="buy-now" onclick=openPurchase() name="<?php echo htmlspecialchars($Bname); ?>"><?php echo htmlspecialchars($sentence); ?></button>
             </form>
         </div>
         <?php endforeach ?>

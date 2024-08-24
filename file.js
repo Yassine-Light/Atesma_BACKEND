@@ -51,14 +51,3 @@ function showCertificatesDropdown(){
 
 
 }
-let hero = 2
-function switchHeroRight(){
-    document.getElementById("added-value-text").style.transform = "translateX(0%)"
-    document.getElementById("introduction-text").style.transform = "translateX(-700%)"
-    
-}
-function switchHeroLeft(){
-    document.getElementById("added-value-text").style.transform = "translateX(-700%)"
-    document.getElementById("introduction-text").style.transform = "translateX(0%)"
-    
-}
