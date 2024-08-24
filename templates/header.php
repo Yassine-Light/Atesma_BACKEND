@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/templates/home.css">
     <link rel="stylesheet" href="/templates/certificates.css">
-    <link rel="stylesheet" href="/templates/common.css">
+    <link rel="stylesheet" href="./templates/common.css">
     <link rel="stylesheet" href="/templates/store.css">
     <link rel="stylesheet" href="/templates/certificate details.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

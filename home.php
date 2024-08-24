@@ -18,96 +18,142 @@ if(isset($_POST["btn-vs"])){
 </head>
 <script src="file.js"></script>
 <body>
-<main class="home-main">
-        <section class="introduction">
-            <div class="arrow arrow-left" id="arrow-left" onclick=switchHeroLeft()>  <  </div>
-            <div class="introduction-text" id="introduction-text">
-                <h1 class="introduction-title">Welcome to Atesma</h1>
-                <p class="introduction-paragraph">We are the leading certificates provider in <b>all</b> Morocco,we provide 
-                IT certificates given by the highest ranking companies, as yes They are our partners! </p>
-                <form method="post">
-                <button class="learn-more" name="btn-xc">Explore certificates <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                </form>
+    <main class="home-main"><section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-slider">
+          <div class="hero-slide active">
+            <div class="hero-content">
+              <h1>Welcome to Atesma</h1>
+              <p>Your journey to excellence starts here Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt rerum ab nulla qui eius doloremque autem impedit quisquam unde.</p>
+              <a href="#services" class="hero-btn">Explore Our Services</a>
             </div>
-            <div class="arrow arrow-right" id="arrow-right" onclick=switchHeroRight()> > </div>
-           
-
-                
-                <div class="added-value-text" id="added-value-text">
-                    <h1 class="added-value-title">What we offer</h1>
-                    <p class="added-value-paragraph">Atesma certifications boost career opportunities and earning potential for professionals, offering comprehensive support and preparation. For organizations, they ensure a skilled, productive workforce and enhanced business performance. Globally recognized.
-                    </p>
-                    <form method="POST" >
-                    <button class="learn-more" name="btn-vs">visit store<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                    </form>
-                </div>
-                
-
-        </section>
-        
-        <section class="info">
-            <div class="info-text">
-             
-
-                   <h1> What is Atesma?</h1>
-                    <p >Atesma is a leading provider of professional certification exams and educational resources. Our mission is to empower individuals and organizations through validated skills and knowledge, ensuring they stay ahead in </p>
-                    
-                </div>
+          </div>
+          <div class="hero-slider">
+            <div class="hero-content">
+              <h1>Innovate with Atesma</h1>
+              <p>Discover cutting-edge solutions for your business Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quibusdam reprehenderit doloribus eligendi deserunt asperiores voluptates voluptate sed doloremque fuga.</p>
+              <a href="#about" class="hero-btn">Learn More</a>
             </div>
-            <div class="info-sub">
-            <div class="info-card first-card">
-                <i class="fa-regular fa-circle-user"></i>
-                <h1>For Individuals</h1>
-                <p> we make sure that our clients are satisfied, thus we have managed to achieve 100% rate of client satisfaction </p>
+          </div>
+        </div>
+        <div class="hero-controls">
+          <button class="prev-slide fade-in">❮</button>
+          <button class="next-slide fade-in">❯</button>
+        </div>
+      </section>
+      
+          
+        <section class="circles-tree">
+            <div class="home-circle">
+                <i class="fa-solid fa-house-flag slide-in-left"></i>
             </div>
-            <div class="info-card second-card">
+            <div class="poles">
+
+            <div class="pole pole-a slide-in-left"></div>
+            <div class="pole pole-b scale-up"></div>
+            <div class="pole pole-c slide-in-right"></div>
+
+        </div>
+        <div class="other-circles">
+            <div class="circle  ">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="circle">
                 <i class="fa-solid fa-school"></i>
-                <h1>Are you school? </h1>
-                <p>at day, at night, whenever you need ourhelp, we will be there for you!  </p>
             </div>
-            <div class="info-card third-card">
+            <div class="circle">
                 <i class="fa-solid fa-bolt"></i>
-                <h1>High quality service
-                </h1>
-                <p>we keep getting positive feedback after dealing with clients, do not believe us? be one and see for yourself!</p>
             </div>
         </div>
-        </section>
-        <section class="statistics-section-container">
-            <h2 class="stats-heading">Our Stats Talk on Behalf of Us</h2>
-            <div class="statistics-section">
-                <div class="stat">
-                    <div class="stat-value">100%</div>
-                    <div class="stat-label">Client Satisfaction</div>
+            <div class="c-cards">
+                <div class="c-card slide-in-left ">
+                    <h1>For individuals</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium reiciendis exercitationem perferendis quos quae consectetur error ab adipisci est corporis.</p>
                 </div>
-                <div class="stat">
-                    <div class="stat-value">24/7</div>
-                    <div class="stat-label">Support Availability</div>
+                <div class="c-card fade-in">
+                    <h1>For Schools</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque mollitia explicabo aliquid quos id impedit nisi perspiciatis iusto quibusdam molestiae!</p>
                 </div>
-                <div class="stat">
-                    <div class="stat-value">500+</div>
-                    <div class="stat-label">Positive Feedbacks</div>
+                <div class="c-card slide-in-right">
+                    <h1>High Quality </h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus minus eligendi necessitatibus sequi voluptates, repudiandae iste quaerat natus dolorum sit!</p>
+                </div>
+            </div>
+ </section>
+ 
+<section class="featured-certificates">
+    <h1>featured certificates</h1>
+    <div class="c-container ">
+    <div class="featured-certificate fade-in">
+        <img src="/photos/AppDev.png" alt="">
+        <h2>Title</h2>
+        <p>Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, architecto.</p>
+    </div>
+    <div class="featured-certificate fade-in">
+        <img src="/photos/AppDev.png" alt="">
+        <h2>Title</h2>
+        <p>Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, architecto.</p>
+    </div>
+    <div class="featured-certificate fade-in">
+        <img src="/photos/AppDev.png" alt="">
+        <h2>Title</h2>
+        <p>Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, architecto.</p>
+    </div>
+</div>
+</section>
+        
+        
+        <section class="stats-section">
+            <div class="section-heading fade-in">
+                <h2>Men lie, Numbers don't</h2>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item fade-in">
+                    <h3>705</h3>
+                    <p>Issued certificates</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>100+</h3>
+                    <p>SATISFIED CUSTOMERS</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>24/7</h3>
+                    <p>Available Support</p>
+                </div>
+                <div class="stat-item fade-in ">
+                    <h3>10</h3>
+                    <p>YEARS OF EXPERIENCE</p>
                 </div>
             </div>
         </section>
         
-          <section class="partners">
-            <h1>our partners</h1>
-            <div class="list">
-                <img src="/photos/AppDev.png" alt="">
-                <img src="/photos/AppDev.png" alt="">
-                <img src="/photos/AppDev.png" alt="">
-                <img src="/photos/AppDev.png" alt="">
-                <img src="/photos/AppDev.png" alt="">
 
-            </div>
-            
-          </section>
-          
-          
-        
 
-        
-        <!--<section class="get-started">Join the Atesma community today and take the first step towards professional excellence. Whether you're looking to certify your skills or become a training partner, we have the resources and support you need.
-        </section>-->
     </main>
+<script>
+    
+    document.addEventListener("DOMContentLoaded", () => {
+    // Select all elements with animation classes
+    const animations = document.querySelectorAll('.slide-in-left, .slide-in-right, .fade-in, .scale-up');
+
+    // Create the Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // Add the 'scroll-animation' class when the element is in view
+                entry.target.classList.add('scroll-animation');
+            }
+            else{
+                entry.target.classList.remove('scroll-animation');
+            }
+            // We don't remove the class when the element goes out of view to keep the animation
+        });
+    }, 
+    { threshold: 0.3 });
+
+    // Observe each element
+    animations.forEach(animation => {
+        observer.observe(animation);
+    });
+});
+</script>
