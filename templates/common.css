@@ -107,9 +107,7 @@ header{
 }
 
     
-main{
-    margin-top:150px;
-}
+
 .logo{
     margin-top: -10px;
     height: 60px;
@@ -500,7 +498,7 @@ section.filtering-s {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 90%;
+    min-width: 100%;
     
     gap: 25px;
     row-gap:150px;
@@ -508,7 +506,7 @@ section.filtering-s {
     padding-top: 50px;
 }
 .product{
-    height: 569px;
+    height: fit-content;
     width: 25%;
     min-width: 200px;
     display: flex;
@@ -524,8 +522,9 @@ section.filtering-s {
     rotate: 3deg;
 
 }
-.product-image{
-    width: 250px;
+.product img{
+    width: 100%;
+    max-height: 200px;
     display: flex;
     flex-direction: column;
     border-radius: 6px;
@@ -642,50 +641,50 @@ main .h1::after {
 
     
    
-}
-.purchase-section{
-    width: 100dvw;
-    height: 100dvh;
+}.purchase-section {
     position: fixed;
+    width: 100vw; /* or 100dvw */
+    height: 100vh; /* or 100dvh */
     z-index: 1480;
     display: none;
-    justify-content: center;
-    align-items: center;
-    
-
+    flex-direction: row;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
-.purchase-overlay{
-    width: 100dvw;
-    height: 100dvh;
-    position: fixed;
-  
+
+.purchase-overlay {
+    width: 100vw; /* or 100dvw */
+    height: 100vh; /* or 100dvh */
     background: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
-
-   
+    position: absolute; /* Ensure it covers the entire section */
+    top: 0;
+    left: 0;
 }
-.purchase-form h1{
+
+.purchase-form h1 {
     font-size: 32px;
     width: 100%;
     text-align: center;
     font-weight: 500;
 }
-.purchase-form h3{
+
+.purchase-form h3 {
     font-size: 16px;
     width: 100%;
     text-align: center;
     margin-bottom: 50px;
 }
+
 .purchase-form {
     max-width: 350px;
+    min-width: 300px;
     height: fit-content;
-    margin: 0 auto;
     padding: 1.5rem;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-
     z-index: 100;
-  }
+}
   
 
   
@@ -1311,11 +1310,11 @@ footer .logo{
   }
   
   .hero-slide:nth-child(1) {
-    background-image: url('/photos/desk-3139127_1280.jpg');
+    background-image: url('../photos/desk-3139127_1280.jpg');
   }
   
   .hero-slide:nth-child(2) {
-    background-image: url('/photos/laptop-1478822_1280.jpg');
+    background-image: url('../photos/laptop-1478822_1280.jpg');
   }
   
   .hero-content {
@@ -1946,6 +1945,7 @@ body {
     padding: 0;
     background: linear-gradient(135deg, white, white);
     color: #333;
+    gap: 0;
 }
 
 .home-certificate {
@@ -2154,7 +2154,7 @@ body {
 
 /*admindashboard.css*/body.dashboard-body {
     flex-direction: row;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f5f7;
@@ -2531,7 +2531,7 @@ body {
 }
 
 .stat-percentage.increase {
-    background-color: #28a745;
+    background-color: #0e76a8;
     color: white;
 }
 
@@ -2746,3 +2746,263 @@ body {
     background-color: #005f8b;
 }
 
+
+.main-content {
+    flex: 3;
+    padding: 20px;
+    width: 90%;
+}
+
+.available-certif, .add-cert-section {
+    margin-bottom: 40px;
+}
+
+.available-certif h2, .add-cert-section h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.certif-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.certif-item {
+    width: 150px;
+    height: 150px;
+    background-color: #d9d9d9;
+    border-radius: 8px;
+}
+
+.add-cert-form {
+    display: flex;
+    gap: 10px;
+}
+
+.add-cert-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-cert-form .add-btn {
+    padding: 10px;
+    background-color: #0e76a8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .certif-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .certif-item {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .add-cert-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .add-cert-form .add-btn {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    display: none;
+    max-width: 1200px;
+    width:90%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+    flex: 3;
+    padding-right: 20px;
+}
+
+.cert-pic-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cert-pic-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: #d9d9d9;
+    display: flex;
+    border-radius: 1.4em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+}
+
+.add-cert-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #0e76a8;
+    margin-top: 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+.form-group input, .modules-section input, select {
+    width: calc(100% - 50px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.modules-section div button{
+    height: 100%;
+}
+.arrow-button {
+    padding: 10px;
+    background-color: #0e76a8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modules-section {
+    margin-bottom: 20px;
+}
+
+.modules-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.add-module-btn {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #0e76a8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modules-list {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.modules-list li {
+    margin-bottom: 10px;
+}
+
+.resources {
+    margin-top: 20px;
+}
+
+.resources input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.certif-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.certif-item .overlay{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 150px;
+    height: 150px;
+    margin-top: -155px;
+}
+.certif-item:hover .overlay{
+    display: flex;
+}
+.certif-item .overlay button{
+    padding: 8px;
+    background-color: #0e76a8;
+    outline: none;
+    color: white;
+    border: none;
+    border-radius: 0.5em;
+    font-size: 18px;
+    cursor: pointer;
+}

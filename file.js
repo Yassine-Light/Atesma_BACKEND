@@ -51,3 +51,33 @@ function showCertificatesDropdown(){
 
 
 }
+
+function openPurchase(){
+    document.getElementById("purchase-section").style.display = "flex"
+}
+function hidePurchase(){
+    document.getElementById("purchase-section").style.display = "none"
+}
+function purchaseDone(){
+    localStorage.setItem("purchase", "done")
+    document.getElementById("purchase-form").style.display = "none"
+    console.log("working 2")
+    window.location.href = "http://localhost/atesma_BACKEND/index.php?page=store";
+
+
+}
+
+
+function showPopup() {
+document.getElementById('success-popup').style.display = 'block';
+}
+
+// Function to hide the popup
+document.getElementById('close-popup').onclick = function() {
+document.getElementById('success-popup').style.display = 'none';
+localStorage.removeItem("purchase")
+console.log(localStorage.getItem("purchase"))
+
+}
+
+// Optional: Automatically close the popup after a few seconds

@@ -156,4 +156,14 @@ if(isset($_POST["btn-vs"])){
         observer.observe(animation);
     });
 });
+
+
+
+
+
+if (localStorage.getItem("purchase") == "done"){
+    window.location.href = "http://localhost/atesma_BACKEND/index.php?page=store";
+    
+}
+
 </script>

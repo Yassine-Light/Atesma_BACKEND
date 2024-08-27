@@ -33,10 +33,10 @@ if (mysqli_num_rows($result) > 0) { ?>
             <div class="product-title"><?php echo htmlspecialchars($certificate['Name']); ?></div>
             <p class="product-description"><?php echo htmlspecialchars($certificate['Category']) ?></p>
             <p class="price"><?php echo htmlspecialchars($certificate['Price']." DH") ?></p>
-            <form action="<?php echo htmlspecialchars($action) ?>" method="post">
+            <div  action="<?php echo htmlspecialchars($action) ?>" method="post">
                 <input type="hidden" name="index" value="<?php echo htmlspecialchars($index); ?>">
-                <button type="submit" class="buy-now" onclick=openPurchase() name="<?php echo htmlspecialchars($Bname); ?>"><?php echo htmlspecialchars($sentence); ?></button>
-            </form>
+                <button  class="buy-now" onclick=openPurchase() name="<?php echo htmlspecialchars($Bname); ?>"><?php echo htmlspecialchars($sentence); ?></button>
+            </div>
         </div>
         <?php endforeach ?>
     </section>
