@@ -54,27 +54,26 @@ if(isset($_POST["btn-vs"])){
             <div class="pole pole-c slide-in-right"></div>
 
         </div>
-        <div class="other-circles">
-            <div class="circle  ">
+       
+            <div class="c-cards">
+                <div class="c-card slide-in-right ">
+                <div class="circle" style="position:absolute; margin-top:-100px;">
                 <i class="fa-solid fa-user"></i>
             </div>
-            <div class="circle">
-                <i class="fa-solid fa-school"></i>
-            </div>
-            <div class="circle">
-                <i class="fa-solid fa-bolt"></i>
-            </div>
-        </div>
-            <div class="c-cards">
-                <div class="c-card slide-in-left ">
                     <h1>For individuals</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium reiciendis exercitationem perferendis quos quae consectetur error ab adipisci est corporis.</p>
                 </div>
                 <div class="c-card fade-in">
+                <div class="circle" style="position:absolute; margin-top:-100px;">
+                <i class="fa-solid fa-user"></i>
+            </div>
                     <h1>For Schools</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque mollitia explicabo aliquid quos id impedit nisi perspiciatis iusto quibusdam molestiae!</p>
                 </div>
-                <div class="c-card slide-in-right">
+                <div class="c-card slide-in-left">
+                <div class="circle" style="position:absolute; margin-top:-100px;">
+                <i class="fa-solid fa-user"></i>
+            </div>
                     <h1>High Quality </h1>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus minus eligendi necessitatibus sequi voluptates, repudiandae iste quaerat natus dolorum sit!</p>
                 </div>

@@ -66,8 +66,6 @@ function purchaseDone(){
 
 
 }
-
-
 function showPopup() {
 document.getElementById('success-popup').style.display = 'block';
 }

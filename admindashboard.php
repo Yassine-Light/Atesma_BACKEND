@@ -185,7 +185,7 @@ document.getElementById("add-btn").addEventListener("click", function() {
                 <td>john.doe@example.com</td>
                 <td>jdoe_cert123</td>
                 <td class="actions">
-                    <button class="done-btn">Mark as Done</button>
+                    <button class="done-btn">Done</button>
                     <button class="delete-btn">Delete</button>
                 </td>
             </tr>
@@ -197,7 +197,7 @@ document.getElementById("add-btn").addEventListener("click", function() {
                 <td>john.doe@example.com</td>
                 <td>jdoe_cert123</td>
                 <td class="actions">
-                    <button class="done-btn">Mark as Done</button>
+                    <button class="done-btn">Done</button>
                     <button class="delete-btn">Delete</button>
                 </td>
             </tr>
@@ -209,7 +209,7 @@ document.getElementById("add-btn").addEventListener("click", function() {
                 <td>john.doe@example.com</td>
                 <td>jdoe_cert123</td>
                 <td class="actions">
-                    <button class="done-btn">Mark as Done</button>
+                    <button class="done-btn">Done</button>
                     <button class="delete-btn">Delete</button>
                 </td>
             </tr>

@@ -22,7 +22,9 @@ body{
     font-style: normal;
 
 }
-
+main{
+    margin-top:150px ;
+}
 header{  
 
     display: flex;
@@ -1460,12 +1462,16 @@ footer .logo{
     justify-content: space-between;
 
     width:1000px;
-    margin-top: -50px;
+    margin-top: -75px;
     z-index: -1;
 }.c-card {
     background-color: #0e76a8;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
     height: fit-content;
     padding-top: 50px;
     max-width: 250px;
@@ -1491,7 +1497,32 @@ footer .logo{
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width:1028px) {
+    .pole{
+        display: none;
+    }
+    .c-cards{
 
+        width: 100%;
+        align-items: center;
+    }
+    .c-card{
+        margin-top: 150px;
+        width: 25%;
+        max-width: 25%;
+        
+    }
+    .slide-in-left{
+        transform: translateX(0);
+    }
+    .slide-in-right{
+        transform: translateX(0);
+    }
+    .home-circle{
+        display: none;
+    }
+  
+}
 
 .stats-section {
     background-color: #0e76a8;
@@ -1539,6 +1570,7 @@ footer .logo{
     letter-spacing: 1px;
     font-weight:400 ;
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -1646,11 +1678,42 @@ footer .logo{
     line-height: 1.6;
 }
 
+
+@media screen and (max-width:856px) {
+    .pole{
+        display: none;
+    }
+    .c-cards{
+        flex-direction: column;
+
+
+
+    }
+    .c-card{
+        margin-top: 150px;
+        width: 90%;
+        max-width: 90%;
+        
+    }
+    .slide-in-left{
+        transform: translateX(0);
+    }
+    .slide-in-right{
+        transform: translateX(0);
+    }
+    .home-circle{
+        display: none;
+    }
+    
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .featured-certificate {
-        max-width: 100%;
-        padding: 15px;
+    .c-container{
+        flex-direction: column;
+    }
+    .featured-certificate{
+        width: 100%;
     }
 
     .featured-certificates h1 {

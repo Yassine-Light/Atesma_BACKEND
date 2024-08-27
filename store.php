@@ -151,6 +151,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
+
+    </main>
+    
 <section class="purchase-section" id="purchase-section">
         <div class="purchase-overlay" onclick=hidePurchase()></div>
     <form class="purchase-form" id="purchase-form">
@@ -187,6 +190,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 
+
+    
     <script>
         
 function openPurchase(){
@@ -233,5 +238,3 @@ console.log(localStorage.getItem("purchase"))
 
 
     </script>
-    </main>
-    
