@@ -6,10 +6,12 @@ if ($page === 'store') {
     $Bname = "buy-cf";
     $sentence = "Buy Now";
     $action = "";
+    $tag ="div";
 } else  {
     $Bname = "cer-DT";
     $sentence = "Check details";
     $action = "certificate details.php";
+    $tag = "form";
 }
 
 if (isset($_POST['category'])) {
@@ -33,10 +35,10 @@ if (mysqli_num_rows($result) > 0) { ?>
             <div class="product-title"><?php echo htmlspecialchars($certificate['Name']); ?></div>
             <p class="product-description"><?php echo htmlspecialchars($certificate['Category']) ?></p>
             <p class="price"><?php echo htmlspecialchars($certificate['Price']." DH") ?></p>
-            <form action="<?php echo htmlspecialchars($action) ?>" method="post">
+            <<?php echo htmlspecialchars($tag) ?> action="<?php echo htmlspecialchars($action) ?>" method:"POST">
                 <input type="hidden" name="index" value="<?php echo htmlspecialchars($index); ?>">
-                <button type="submit" class="buy-now" onclick=openPurchase() name="<?php echo htmlspecialchars($Bname); ?>"><?php echo htmlspecialchars($sentence); ?></button>
-            </form>
+                <button type="submit" class="buy-now" name="<?php echo htmlspecialchars($Bname); ?>"><?php echo htmlspecialchars($sentence); ?></button>
+            </<?php echo htmlspecialchars($tag) ?>>
         </div>
         <?php endforeach ?>
     </section>

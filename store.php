@@ -101,14 +101,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function fetchItems(data) {
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'search.php', true); // Send request to search.php
+        xhr.open('POST', 'search.php', true); 
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                // Replace the content with the returned items
+
                 searchResult.innerHTML = xhr.responseText;
-                searchResult.style.display = 'block'; // Show the results
+                searchResult.style.display = 'block'; 
             }
         };
         
