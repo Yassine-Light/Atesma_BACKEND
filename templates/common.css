@@ -162,6 +162,9 @@ footer{
 
   
 }
+footer img{
+    width: 150px;
+}
 footer i {
     color: white;
 }
@@ -1366,7 +1369,7 @@ footer .logo{
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
+    display: none;/*in order to work should be flex*/
     gap: 10px;
     z-index: 2;
   }
@@ -1387,6 +1390,9 @@ footer .logo{
   
   /* Responsive Design */
   @media (max-width: 768px) {
+    .hero-content{
+        width: 90%;
+    }
     .hero-content h1 {
       font-size: 1.5rem;
     }
@@ -1486,7 +1492,7 @@ footer .logo{
 }
 
 .c-card p {
-    font-size: 18px;
+    font-size: 20px;
     color: white;
     line-height: 1.5;
     text-align: left;
@@ -1737,6 +1743,7 @@ footer .logo{
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    
 }
 .certificates-main .h1 {
     font-size: 2.5rem; /* Increase the font size */
@@ -1941,6 +1948,7 @@ section.filtering-c {
 @media screen  and (max-width:900px) {
     .certificates-main{
         padding: 30px;
+        width: 90%;
 
     }
     

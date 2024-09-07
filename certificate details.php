@@ -19,6 +19,15 @@ if ($index !== null) {
     } }
 ?>
 
+<?php
+// Redirect to another page
+if (isset($selectedCertificate)):
+    header("Location: https://certiport.pearsonvue.com/Certifications/{$selectedCertificate['Category']}/");
+    exit();
+endif;
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
