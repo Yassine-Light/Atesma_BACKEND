@@ -12,7 +12,7 @@
           <div class="hero-slide active">
             <div class="hero-content">
               <h1>Welcome to Atesma</h1>
-              <p>Welcome to Atesma, where your path to certification and career growth starts. We provide top-tier certifications and resources to boost your skills and advance your career. Trust us to support you in achieving your goals and exploring new opportunities with confidence.</p>
+              <p>Welcome to Atesma, The number 1 certificates providing company in Morocco. We provide top-tier certifications and resources to boost your skills and advance your career.</p>
               <a href="index.php?page=store" class="hero-btn">Visit our store</a>
             </div>
           </div>
@@ -63,7 +63,7 @@
                 <i class="fa-solid fa-bolt"></i>
             </div>
                     <h1>High Quality </h1>
-                    <p>At Atesma, we deliver top-quality certification programs and resources, continually updated to ensure excellence and relevance.</p>
+                    <p>At Atesma, we deliver top-quality certification programs and resources, continually updated to ensure excellence, relevance and high quality.</p>
                 </div>
             </div>
  </section>

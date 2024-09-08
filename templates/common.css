@@ -20,6 +20,7 @@ body{
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
+    transition: 0.5s ease all;
 
 }
 main{
@@ -327,7 +328,7 @@ svg{
         position: absolute;
         width: 100dvw;
         background-color: white;
-        margin-top: 365px;
+        margin-top: 300px;
         border-radius: 0;
 
 
@@ -527,13 +528,21 @@ section.filtering-s {
     rotate: 3deg;
 
 }
-.product img{
+.product .img-container{
     width: 100%;
+    min-height: 200px;
     max-height: 200px;
     display: flex;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     border-radius: 6px;
+    object-fit: contain;
     
+}
+.img-container img{
+    width: 90%;
 }
 .product-title{
     font-size:24px;
@@ -642,6 +651,7 @@ main .h1::after {
     .product{
         margin-left: 20px;
         align-self: center;
+        width: 80%;
     }
 
     
@@ -3053,6 +3063,7 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
 .certif-item .overlay{
     display: none;
     justify-content: space-around;
@@ -3066,6 +3077,12 @@ body {
 }
 .certif-item:hover .overlay{
     display: flex;
+}
+#search{
+    padding: 8px 16px;
+    border-radius: 0.5em;
+    border: none;
+    outline: none;
 }
 .certif-item .overlay button{
     padding: 8px;

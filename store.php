@@ -59,6 +59,7 @@ mysqli_close($conn);
     </main>
 
     <section class="purchase-section" id="purchase-section">
+        <div class="purchase-overlay"></div>
         <form class="purchase-form" id="purchase-form">
         <input type="hidden" id="certificate_id" name="certificate_id" value="">
             <h1>Purchase Request</h1>

@@ -31,6 +31,6 @@
             <a href="index.php?page=store" class="nav-item"><i class="fa-solid fa-store"></i>Store</a>
             
         </div>
-        <a href="index.php?page=login" class="nav-item login"><i class="fa-solid fa-right-to-bracket"></i>Login/Register</a>
+        <a href="https://app.certiport.com/portal/" class="nav-item login"><i class="fa-solid fa-right-to-bracket"></i>Login/Register</a>
 
     </header>

@@ -90,8 +90,9 @@ mysqli_close($conn);
                         <h2>Available Certif:</h2>
                         <div class="certif-list">
                             <?php foreach($certificates as $certificate): ?>
+                                <div class="certif-item">
                                 <img src="data:image/jpeg;base64,<?php echo base64_encode($certificate['Picture']); ?>" alt="" class="certif-list">
-                                <div class="certif-list"><?php echo htmlspecialchars($certificate['Name']); ?></div>
+                                </div>
                             <?php endforeach ?>
                         </div>
                     </div>

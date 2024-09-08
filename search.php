@@ -31,7 +31,8 @@ if (mysqli_num_rows($result) > 0) { ?>
     <section class="products">
         <?php foreach($certificates as $index => $certificate): ?>
         <div class="product">
-            <img src="data:image/jpeg;base64,<?php echo base64_encode($certificate['Picture']); ?>" alt="" class="category-image">
+            <div class="img-container">
+            <img src="data:image/jpeg;base64,<?php echo base64_encode($certificate['Picture']); ?>" alt="" class="category-image"></div>
             <div class="product-title"><?php echo htmlspecialchars($certificate['Name']); ?></div>
             <p class="product-description"><?php echo htmlspecialchars($certificate['Category']) ?></p>
             <p class="price"><?php echo htmlspecialchars($certificate['Price']." DH") ?></p>
