@@ -17,6 +17,9 @@ if (isset($_GET['page'])) {
     }
     elseif ($_GET['page'] == 'certificate details') {
         include('certificate details.php');}
+    elseif ($_GET['page']  == 'login'){
+        include('login.php');
+    }
     elseif ($_GET['page'] == 'admindashboard') {
         include('admindashboard.php');}
 

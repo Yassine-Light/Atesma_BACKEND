@@ -62,7 +62,7 @@ function purchaseDone(){
     localStorage.setItem("purchase", "done")
     document.getElementById("purchase-form").style.display = "none"
     console.log("working 2")
-    window.location.href = "http://localhost/atesma_BACKEND/index.php?page=store";
+    window.location.href = "index.php?page=store";
 
 
 }
