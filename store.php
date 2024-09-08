@@ -60,6 +60,7 @@ mysqli_close($conn);
 
     <section class="purchase-section" id="purchase-section">
         <form class="purchase-form" id="purchase-form">
+        <input type="hidden" id="certificate_id" name="certificate_id" value="">
             <h1>Purchase Request</h1>
             <h3>Please fill in the information below, and we will contact you as soon as possible</h3>
 
@@ -87,31 +88,50 @@ mysqli_close($conn);
     </div>
 
     <script>
-    $(document).ready(function() {
-        // AJAX form submission
-        $('#purchase-form').on('submit', function(event) {
-            event.preventDefault();
-            var formData = {
-                s_name: $('#full-name').val(),
-                s_email: $('#email').val(),
-                s_phone: $('#phone').val(),
-                s_certiport_username: $('#certiport-username').val()
-            };
-            $.ajax({
-                url: 'process_purchase.php',
-                type: 'POST',
-                data: formData,
-                success: function(response) {
-                    // Let the existing JavaScript handle the popup behavior
-                    localStorage.setItem("purchase", "done");
-                    document.getElementById("purchase-form").style.display = "none";
-                    window.location.href = "index.php?page=store";
-                },
-                error: function() {
-                    alert('There was an error processing the form.');
-                }
-            });
+ $(document).ready(function() {
+    // When the purchase button is clicked, get the certificate ID from the hidden input field
+    $('.buy-now').click(function(event) {
+        var certificateId = $(this).siblings('.certificate-id').val(); // Fetch the certificate ID from the hidden input
+        console.log("Certificate ID:", certificateId); // Log the certificate ID
+        $('#certificate_id').val(certificateId); // Set the certificate ID in the form
+        openPurchase(); // Open the purchase form
+    });
+
+    // AJAX form submission with console logs
+    $('#purchase-form').on('submit', function(event) {
+        event.preventDefault();
+
+        var formData = {
+            s_name: $('#full-name').val(),
+            s_email: $('#email').val(),
+            s_phone: $('#phone').val(),
+            s_certiport_username: $('#certiport-username').val(),
+            certificate_id: $('#certificate_id').val()
+        };
+
+        console.log("Form Data:", formData);
+
+        $.ajax({
+            url: 'process_purchase.php',
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                console.log("Response from PHP:", response);
+                localStorage.setItem("purchase", "done");
+                document.getElementById("purchase-form").style.display = "none";
+                window.location.href = "index.php?page=store";
+            },
+            error: function(xhr, status, error) {
+                console.log("AJAX error:", error);
+                console.log("Status:", status);
+                console.log("XHR Object:", xhr);
+                alert('There was an error processing the form.');
+            }
         });
+    });
+});
+
+
 
         // Search and Dropdown Logic
         function loadAllProducts() {
@@ -166,7 +186,7 @@ mysqli_close($conn);
                 });
             });
         });
-    });
+    
 
     // Retain the existing popup and removal logic unchanged
     function openPurchase() {
