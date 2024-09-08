@@ -30,8 +30,9 @@ mysqli_close($conn);
                         <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
                     </svg>
                     <div class="dropdown-menu" id="dropdown-category">
+                    <div class="category" data-value="All">1 - All</div>
                         <?php
-                        $i = 0;
+                        $i = 1;
                         $displayed_categories = array();
                         foreach($certificates as $certificate) {
                             if (!in_array($certificate['Category'], $displayed_categories)) {
@@ -109,9 +110,7 @@ mysqli_close($conn);
             s_certiport_username: $('#certiport-username').val(),
             certificate_id: $('#certificate_id').val()
         };
-
-        console.log("Form Data:", formData);
-
+   
         $.ajax({
             url: 'process_purchase.php',
             type: 'POST',
@@ -175,7 +174,9 @@ mysqli_close($conn);
                 const selectedValue = this.getAttribute('data-value');
                 searchResult.innerHTML = '';
                 searchInput.value = '';
-
+                if (selectedValue === "All") {
+            loadAllProducts(); 
+        } else {
                 $.ajax({
                     url: "search.php",
                     method: "POST",
@@ -185,6 +186,7 @@ mysqli_close($conn);
                         $("#searchresult").css("display", "block");
                     }
                 });
+            }
             });
         });
     

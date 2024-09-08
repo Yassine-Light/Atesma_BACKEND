@@ -26,8 +26,9 @@ mysqli_close($conn);
                         <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
                     </svg>
                     <div class="dropdown-menu" id="dropdown-category">
+                    <div class="category" data-value="All">1 - All</div>
                     <?php $displayed_categories =array();
-                          $i=0;
+                          $i=1;
                     foreach($certificates as $certificate){
                         if(!in_array($certificate['Category'], $displayed_categories)){
                             $displayed_categories[] = $certificate['Category'];
@@ -96,59 +97,61 @@ $(document).ready(function(){
 
 </script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const dropdownItems = document.querySelectorAll('.dropdown-menu .category');
-    const searchInput = document.getElementById('search');
-    const searchResult = document.getElementById('searchresult');
-
-    function fetchItems(data) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'search.php', true); // Send request to search.php
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                // Replace the content with the returned items
-                searchResult.innerHTML = xhr.responseText;
-                searchResult.style.display = 'block'; // Show the results
-            }
-        };
-        
-        xhr.send(data);
-    }
-
-    dropdownItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const selectedValue = this.getAttribute('data-value');
-            console.log('Selected category:', selectedValue); // Debugging line
-
-            // Clear the previous content and search input
-            searchResult.innerHTML = '';
-            searchInput.value = '';
-
-            // Send AJAX request to fetch items based on the selected category
-            fetchItems('category=' + encodeURIComponent(selectedValue));
-        });
-    });
-
-    searchInput.addEventListener('keyup', function() {
-        const inputValue = this.value;
-        if (inputValue !== "") {
-            // Send AJAX request to fetch items based on the search input
-            fetchItems('input=' + encodeURIComponent(inputValue));
-        } else {
-            // Clear the search results if the input is empty
-            searchResult.innerHTML = '';
+        function loadAllProducts() {
+            $.ajax({
+                url: "search.php",
+                method: "POST",
+                data: { input: '', page: "store" },
+                success: function(data) {
+                    $("#searchresult").html(data);
+                    $("#searchresult").css("display", "block");
+                }
+            });
         }
-    });
+        loadAllProducts();
 
-    // Load all products initially if needed
-    function loadAllProducts() {
-        fetchItems('input=');
-    }
+        $("#search").keyup(function() {
+            var input = $(this).val();
+            if (input != "") {
+                $.ajax({
+                    url: "search.php",
+                    method: "POST",
+                    data: { input: input },
+                    success: function(data) {
+                        $("#searchresult").html(data);
+                        $("#searchresult").css("display", "block");
+                    }
+                });
+            } else {
+                loadAllProducts();
+            }
+        });
 
-    loadAllProducts(); // Initial load
-});
+        // Category dropdown functionality
+        const dropdownItems = document.querySelectorAll('.dropdown-menu .category');
+        const searchInput = document.getElementById('search');
+        const searchResult = document.getElementById('searchresult');
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const selectedValue = this.getAttribute('data-value');
+                searchResult.innerHTML = '';
+                searchInput.value = '';
+                if (selectedValue === "All") {
+            loadAllProducts(); 
+        } else {
+                $.ajax({
+                    url: "search.php",
+                    method: "POST",
+                    data: { category: selectedValue },
+                    success: function(data) {
+                        $("#searchresult").html(data);
+                        $("#searchresult").css("display", "block");
+                    }
+                });
+            }
+            });
+        });
 
 
 </script>
